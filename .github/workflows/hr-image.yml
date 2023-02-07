@@ -27,10 +27,9 @@ jobs:
       - name: Create .env
         uses: actually-colab/github-action-create-env-file@v2.3
         with:
-          envkey_OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          directory: ./
+          ENVKEY_OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           file_name: .env
       - name: Build and push generator
         run: |
           docker build -f Dockerfile -t $REGISTRY/openai:latest .
-          docker push $REGISTRY/generator:latest
+          docker push $REGISTRY/openai:latest

@@ -25,6 +25,7 @@ jobs:
           password: ${{ secrets.HR_PASSWORD }}
 
       - name: Create .env
+        uses: actually-colab/github-action-create-env-file@v2.3
         with:
           envkey_OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           directory: ./
